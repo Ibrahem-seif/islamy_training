@@ -5,4 +5,5 @@ class AssetsManger {
   static const String hadithIcon = 'assets/images/hadith_icon.png';
   static const String sebhaIcon = 'assets/images/sebha_icon.png';
   static const String radioIcon = 'assets/images/radio_icon.png';
+  static const String quranHeader = 'assets/images/quran_header.png';
 }

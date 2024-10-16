@@ -29,7 +29,11 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-          image: DecorationImage(image: AssetImage(AssetsManger.lightMainBg))),
+          image: DecorationImage(
+              fit: BoxFit.fill,
+              image: AssetImage(
+                AssetsManger.lightMainBg,
+              ))),
       child: Scaffold(
         appBar: AppBar(
           title: Text(StringsManger.appTitle),
@@ -40,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
               selectedIndex = index;
               setState(() {});
             },
-            items: [
+            items: const [
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage(AssetsManger.quranIcon)),
                   label: StringsManger.quranLable),
