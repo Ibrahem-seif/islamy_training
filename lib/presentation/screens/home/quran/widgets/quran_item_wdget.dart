@@ -3,7 +3,7 @@ import 'package:islamy_training/core/routes_manger.dart';
 import 'package:islamy_training/presentation/screens/home/quran/quran_tab.dart';
 
 class QuranItemWdget extends StatelessWidget {
-  QuranItem quranItem;
+  final QuranItem quranItem;
 
   QuranItemWdget({super.key, required this.quranItem});
 

@@ -4,7 +4,7 @@ import 'package:islamy_training/presentation/screens/home/quran/widgets/quran_it
 import 'package:islamy_training/presentation/screens/home/quran/widgets/quran_widgets.dart';
 
 class QuranTab extends StatelessWidget {
-  List<String> suraNames = [
+  final List<String> suraNames = [
     "الفاتحه",
     "البقرة",
     "آل عمران",
@@ -120,7 +120,7 @@ class QuranTab extends StatelessWidget {
     "الفلق",
     "الناس"
   ];
-  List<int> versesNumber = [
+  final List<int> versesNumber = [
     7,
     286,
     200,
