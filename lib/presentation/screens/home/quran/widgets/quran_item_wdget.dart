@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamy_training/core/routes_manger.dart';
-import 'package:islamy_training/presentation/screens/home/quran/quran_tab.dart';
+import 'package:islamy_training/presentation/screens/home/quran/quran_item.dart';
 
 class QuranItemWdget extends StatelessWidget {
   final QuranItem quranItem;
@@ -14,7 +14,7 @@ class QuranItemWdget extends StatelessWidget {
         Navigator.pushNamed(
           context,
           RoutesManger.quranDetailsRoute,
-          arguments: QuranItem,
+          arguments: quranItem,
         );
       },
       child: IntrinsicHeight(

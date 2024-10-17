@@ -3,6 +3,8 @@ import 'package:islamy_training/core/colors_manger.dart';
 import 'package:islamy_training/presentation/screens/home/quran/widgets/quran_item_wdget.dart';
 import 'package:islamy_training/presentation/screens/home/quran/widgets/quran_widgets.dart';
 
+import 'quran_item.dart';
+
 class QuranTab extends StatelessWidget {
   final List<String> suraNames = [
     "الفاتحه",
@@ -296,13 +298,4 @@ class QuranTab extends StatelessWidget {
       ),
     );
   }
-}
-
-class QuranItem {
-  String suraName;
-  String versesNum;
-  int index;
-
-  QuranItem(
-      {required this.suraName, required this.versesNum, required this.index});
 }
