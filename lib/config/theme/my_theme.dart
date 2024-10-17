@@ -15,10 +15,10 @@ class MyTheme {
       ),
     ),
     textTheme: TextTheme(
-      titleMedium: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
-      labelMedium: TextStyle(fontSize: 19, fontWeight: FontWeight.w400),
+          titleMedium: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
+          labelMedium: TextStyle(fontSize: 19, fontWeight: FontWeight.w400),
           bodyMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
-    dividerTheme: DividerThemeData(
+      dividerTheme: DividerThemeData(
       color: ColorsManger.goldColor,
       thickness: 3,
     ),

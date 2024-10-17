@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islamy_training/core/colors_manger.dart';
+import 'package:islamy_training/core/assets_manger.dart';
 
 class HadithTab extends StatelessWidget {
   const HadithTab({super.key});
@@ -7,7 +7,16 @@ class HadithTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorsManger.goldColor,
+      body: Column(
+        children: [
+          Container(child: Image.asset(AssetsManger.hadithHeader)),
+          Divider(),
+          Text('الاحاديث',
+              style: Theme.of(context).textTheme.titleMedium,
+              textAlign: TextAlign.center),
+          Divider()
+        ],
+      ),
     );
   }
 }

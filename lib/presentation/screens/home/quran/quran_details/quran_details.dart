@@ -18,7 +18,7 @@ class _QuranDetailsState extends State<QuranDetails> {
   Widget build(BuildContext context) {
     QuranItem suraItem =
         ModalRoute.of(context)?.settings.arguments as QuranItem;
-    readSura(suraItem.index);
+    if (verses.isEmpty) readSura(suraItem.index);
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
@@ -30,13 +30,20 @@ class _QuranDetailsState extends State<QuranDetails> {
           appBar: AppBar(
             title: Text(suraItem.suraName),
           ),
-          body: verses.isEmpty
-              ? Center(child: CircularProgressIndicator())
-              : ListView.builder(
-                  itemBuilder: (context, index) =>
-                      VersesWidgets(ayat: verses[index]),
-                  itemCount: verses.length,
-                )),
+          body: Column(
+            children: [
+              Center(child: Text(suraItem.suraName)),
+              verses.isEmpty
+                  ? Center(child: CircularProgressIndicator())
+                  : Expanded(
+                      child: ListView.builder(
+                        itemBuilder: (context, index) =>
+                            VersesWidgets(ayat: verses[index]),
+                        itemCount: verses.length,
+                      ),
+                    ),
+            ],
+          )),
     );
   }
 
