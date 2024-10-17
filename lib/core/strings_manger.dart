@@ -5,4 +5,5 @@ class StringsManger {
   static const String sebhaLable = 'السبحه';
   static const String radioLable = 'الراديو';
   static const String settingsLable = 'الاعدادات';
+  static const String suraName = 'سورة';
 }

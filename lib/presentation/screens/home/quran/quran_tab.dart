@@ -258,14 +258,14 @@ class QuranTab extends StatelessWidget {
               children: [
                 Expanded(
                     child: Text(
-                  'عدد الآيات',
+                  'اسم الصوره',
                   style: Theme.of(context).textTheme.titleMedium,
                   textAlign: TextAlign.center,
                 )),
                 VerticalDivider(),
                 Expanded(
                     child: Text(
-                  'اسم الصوره',
+                  'عدد الآيات',
                   style: Theme.of(context).textTheme.titleMedium,
                   textAlign: TextAlign.center,
                 )),
@@ -281,8 +281,10 @@ class QuranTab extends StatelessWidget {
               flex: 3,
               child: ListView.separated(
                 itemBuilder: (context, index) => QuranItemWdget(
-                    suraName: suraNames[index],
-                    versesNum: versesNumber[index].toString()),
+                    quranItem: QuranItem(
+                        suraName: suraNames[index],
+                        versesNum: versesNumber[index].toString(),
+                        index: index)),
                 itemCount: versesNumber.length,
                 separatorBuilder: (context, index) => Container(
                   width: double.infinity,
@@ -294,4 +296,13 @@ class QuranTab extends StatelessWidget {
       ),
     );
   }
+}
+
+class QuranItem {
+  String suraName;
+  String versesNum;
+  int index;
+
+  QuranItem(
+      {required this.suraName, required this.versesNum, required this.index});
 }

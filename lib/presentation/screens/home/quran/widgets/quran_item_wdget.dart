@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:islamy_training/core/routes_manger.dart';
+import 'package:islamy_training/presentation/screens/home/quran/quran_tab.dart';
 
 class QuranItemWdget extends StatelessWidget {
-  String suraName;
-  String versesNum;
+  QuranItem quranItem;
 
-  QuranItemWdget({super.key, required this.suraName, required this.versesNum});
+  QuranItemWdget({super.key, required this.quranItem});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          RoutesManger.quranDetailsRoute,
+          arguments: QuranItem,
+        );
+      },
       child: IntrinsicHeight(
         child: Row(
           children: [
@@ -17,7 +24,7 @@ class QuranItemWdget extends StatelessWidget {
                 child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 5),
               child: Text(
-                suraName,
+                quranItem.suraName,
                 style: Theme.of(context).textTheme.labelMedium,
                 textAlign: TextAlign.center,
               ),
@@ -27,7 +34,7 @@ class QuranItemWdget extends StatelessWidget {
                 child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 5),
               child: Text(
-                versesNum,
+                quranItem.versesNum,
                 style: Theme.of(context).textTheme.labelMedium,
                 textAlign: TextAlign.center,
               ),
