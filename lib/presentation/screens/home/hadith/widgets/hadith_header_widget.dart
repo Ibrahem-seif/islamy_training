@@ -4,7 +4,7 @@ import 'package:islamy_training/presentation/screens/home/hadith/hadith_tab.dart
 class HadithHeaderWidget extends StatelessWidget {
   HadithHeaderWidget({super.key, required this.hadith});
 
-  HadithItem hadith;
+  final HadithItem hadith;
 
   @override
   Widget build(BuildContext context) {
