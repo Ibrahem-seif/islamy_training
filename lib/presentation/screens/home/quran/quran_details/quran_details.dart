@@ -28,11 +28,10 @@ class _QuranDetailsState extends State<QuranDetails> {
               ))),
       child: Scaffold(
           appBar: AppBar(
-            title: Text(suraItem.suraName),
+            title: Text('سورة${suraItem.suraName}'),
           ),
           body: Column(
             children: [
-              Center(child: Text(suraItem.suraName)),
               verses.isEmpty
                   ? Center(child: CircularProgressIndicator())
                   : Expanded(

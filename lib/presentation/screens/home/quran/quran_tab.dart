@@ -263,6 +263,7 @@ class QuranTab extends StatelessWidget {
                   'اسم الصوره',
                   style: Theme.of(context).textTheme.titleMedium,
                   textAlign: TextAlign.center,
+                  textDirection: TextDirection.rtl,
                 )),
                 VerticalDivider(),
                 Expanded(
@@ -270,6 +271,7 @@ class QuranTab extends StatelessWidget {
                   'عدد الآيات',
                   style: Theme.of(context).textTheme.titleMedium,
                   textAlign: TextAlign.center,
+                  textDirection: TextDirection.rtl,
                 )),
               ],
             ),

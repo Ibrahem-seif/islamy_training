@@ -1,22 +1,64 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:islamy_training/core/assets_manger.dart';
+import 'package:islamy_training/presentation/screens/home/hadith/hadith_item.dart';
+import 'package:islamy_training/presentation/screens/home/hadith/widgets/hadith_header_widget.dart';
 
-class HadithTab extends StatelessWidget {
-  const HadithTab({super.key});
+class HadithTab extends StatefulWidget {
+  HadithTab({super.key});
+
+  @override
+  State<HadithTab> createState() => _HadithTabState();
+}
+
+class _HadithTabState extends State<HadithTab> {
+  List<HadithItem> hadiths = [];
 
   @override
   Widget build(BuildContext context) {
+    if (hadiths.isEmpty) readHadith();
     return Scaffold(
       body: Column(
         children: [
-          Container(child: Image.asset(AssetsManger.hadithHeader)),
-          Divider(),
-          Text('الاحاديث',
-              style: Theme.of(context).textTheme.titleMedium,
-              textAlign: TextAlign.center),
-          Divider()
+          Expanded(flex: 2, child: Image.asset(AssetsManger.hadithHeader)),
+          const Divider(),
+          Text(
+            'الاحاديث',
+            style: Theme.of(context).textTheme.titleMedium,
+            textAlign: TextAlign.center,
+            textDirection: TextDirection.rtl,
+          ),
+          const Divider(),
+          Expanded(
+            flex: 3,
+            child: ListView.separated(
+              separatorBuilder: (context, index) => const Divider(),
+              itemBuilder: (context, index) =>
+                  HadithHeaderWidget(hadith: hadiths[index]),
+              itemCount: hadiths.length,
+            ),
+          )
         ],
       ),
     );
+  }
+
+  void readHadith() async {
+    String ahadithContent =
+        await rootBundle.loadString('assets/files/ahadeth.txt');
+    List<String> ahadith = ahadithContent.trim().split('#');
+    for (int i = 0; i < ahadith.length; i++) {
+      String eachHadith = ahadith[i];
+      List<String> hadithLines = eachHadith.trim().split('\n');
+      String hadithTitle = hadithLines[0];
+      hadithLines.removeAt(0);
+      String hadithContent = hadithLines.join('\n');
+      HadithItem hadith = HadithItem(
+        title: hadithTitle,
+        content: hadithContent,
+      );
+      hadiths.add(hadith);
+    }
+    setState(() {});
   }
 }
