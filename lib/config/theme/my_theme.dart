@@ -15,10 +15,10 @@ class MyTheme {
       ),
     ),
     textTheme: TextTheme(
-          titleMedium: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
-          labelMedium: TextStyle(fontSize: 19, fontWeight: FontWeight.w400),
-          bodyMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
-      dividerTheme: DividerThemeData(
+        titleMedium: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
+        labelMedium: TextStyle(fontSize: 19, fontWeight: FontWeight.w400),
+        bodyMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+    dividerTheme: DividerThemeData(
       color: ColorsManger.goldColor,
       thickness: 3,
     ),
@@ -35,10 +35,11 @@ class MyTheme {
       showSelectedLabels: true,
       showUnselectedLabels: false,
     ),
-      cardTheme: CardTheme(
-        color: ColorsManger.goldColor,
-        margin: EdgeInsets.symmetric(vertical: 6, horizontal: 10),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        elevation: 10,
-      ));
+    cardTheme: CardTheme(
+      color: ColorsManger.goldColor,
+      margin: EdgeInsets.symmetric(vertical: 6, horizontal: 10),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      elevation: 10,
+    ),
+  );
 }

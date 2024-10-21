@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamy_training/core/assets_manger.dart';
+import 'package:islamy_training/presentation/screens/home/hadith/hadith_item.dart';
 import 'package:islamy_training/presentation/screens/home/hadith/widgets/hadith_header_widget.dart';
 
 class HadithTab extends StatefulWidget {
@@ -31,7 +32,7 @@ class _HadithTabState extends State<HadithTab> {
           Expanded(
             flex: 3,
             child: ListView.separated(
-              separatorBuilder: (context, index) => Divider(),
+              separatorBuilder: (context, index) => const Divider(),
               itemBuilder: (context, index) =>
                   HadithHeaderWidget(hadith: hadiths[index]),
               itemCount: hadiths.length,
@@ -45,22 +46,19 @@ class _HadithTabState extends State<HadithTab> {
   void readHadith() async {
     String ahadithContent =
         await rootBundle.loadString('assets/files/ahadeth.txt');
-    List<String> ahadith = ahadithContent.split('#');
+    List<String> ahadith = ahadithContent.trim().split('#');
     for (int i = 0; i < ahadith.length; i++) {
-      List<String> hadithLines = ahadith[i].trim().split('\n');
+      String eachHadith = ahadith[i];
+      List<String> hadithLines = eachHadith.trim().split('\n');
       String hadithTitle = hadithLines[0];
-      String hadithContent = hadithLines.removeAt(0);
-      HadithItem hadith =
-          HadithItem(title: hadithTitle, content: hadithContent);
+      hadithLines.removeAt(0);
+      String hadithContent = hadithLines.join('\n');
+      HadithItem hadith = HadithItem(
+        title: hadithTitle,
+        content: hadithContent,
+      );
       hadiths.add(hadith);
     }
     setState(() {});
   }
-}
-
-class HadithItem {
-  String title;
-  String content;
-
-  HadithItem({required this.title, required this.content});
 }
