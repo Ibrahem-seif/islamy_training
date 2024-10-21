@@ -8,4 +8,6 @@ class AssetsManger {
   static const String hadithHeader = 'assets/images/hadith_header.png';
   static const String sebhaHeader = 'assets/images/head_of_seb7a.png';
   static const String sebhaBody = 'assets/images/body_of_seb7a.png';
+  static const String radio = 'assets/images/radio.png';
+  static const String player = 'assets/images/player.png';
 }
