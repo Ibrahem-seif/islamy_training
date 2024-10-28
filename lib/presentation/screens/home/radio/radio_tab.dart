@@ -7,27 +7,26 @@ class RadioTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-        SizedBox(
-          height: size.height * 0.06,
-        ),
-        Image.asset(AssetsManger.radio),
-        SizedBox(
-          height: size.height * 0.05,
-        ),
-        Text(
-          'إذاعة القرآن الكريم',
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
-        SizedBox(
-          height: size.height * 0.02,
-        ),
-        Image.asset(
-          AssetsManger.player,
-          width: size.width * 0.47,
-        ),
-      ]),
-    );
+    return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+      SizedBox(
+        height: size.height * 0.06,
+      ),
+      Image.asset(AssetsManger.radio),
+      SizedBox(
+        height: size.height * 0.05,
+      ),
+      Text(
+        'إذاعة القرآن الكريم',
+        style: Theme.of(context).textTheme.titleMedium,
+        textDirection: TextDirection.rtl,
+      ),
+      SizedBox(
+        height: size.height * 0.02,
+      ),
+      Image.asset(
+        AssetsManger.player,
+        width: size.width * 0.47,
+      ),
+    ]);
   }
 }

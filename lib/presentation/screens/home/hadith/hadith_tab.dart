@@ -17,29 +17,27 @@ class _HadithTabState extends State<HadithTab> {
   @override
   Widget build(BuildContext context) {
     if (hadiths.isEmpty) readHadith();
-    return Scaffold(
-      body: Column(
-        children: [
-          Expanded(flex: 2, child: Image.asset(AssetsManger.hadithHeader)),
-          const Divider(),
-          Text(
-            'الاحاديث',
-            style: Theme.of(context).textTheme.titleMedium,
-            textAlign: TextAlign.center,
-            textDirection: TextDirection.rtl,
+    return Column(
+      children: [
+        Expanded(flex: 2, child: Image.asset(AssetsManger.hadithHeader)),
+        const Divider(),
+        Text(
+          'الاحاديث',
+          style: Theme.of(context).textTheme.titleMedium,
+          textAlign: TextAlign.center,
+          textDirection: TextDirection.rtl,
+        ),
+        const Divider(),
+        Expanded(
+          flex: 3,
+          child: ListView.separated(
+            separatorBuilder: (context, index) => const Divider(),
+            itemBuilder: (context, index) =>
+                HadithHeaderWidget(hadith: hadiths[index]),
+            itemCount: hadiths.length,
           ),
-          const Divider(),
-          Expanded(
-            flex: 3,
-            child: ListView.separated(
-              separatorBuilder: (context, index) => const Divider(),
-              itemBuilder: (context, index) =>
-                  HadithHeaderWidget(hadith: hadiths[index]),
-              itemCount: hadiths.length,
-            ),
-          )
-        ],
-      ),
+        )
+      ],
     );
   }
 

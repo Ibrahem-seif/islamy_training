@@ -8,7 +8,7 @@ import 'package:islamy_training/presentation/screens/home/sebha/sebha_tab.dart';
 import 'package:islamy_training/presentation/screens/home/settings/settings_tab.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ))),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(StringsManger.appTitle),
+          title: const Text(StringsManger.appTitle),
         ),
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: selectedIndex,

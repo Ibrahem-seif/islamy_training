@@ -10,7 +10,7 @@ class HadithDetails extends StatelessWidget {
     HadithItem ahadithItem =
         ModalRoute.of(context)?.settings.arguments as HadithItem;
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
         image: AssetImage(AssetsManger.lightMainBg),
         fit: BoxFit.fill,
@@ -19,19 +19,21 @@ class HadithDetails extends StatelessWidget {
         appBar: AppBar(
           title: Text(ahadithItem.title),
         ),
-        body: Card(
-            child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 5,
-            horizontal: 8,
-          ),
-          child: Text(
-            ahadithItem.content,
-            style: Theme.of(context).textTheme.bodyMedium,
-            textAlign: TextAlign.center,
-            textDirection: TextDirection.rtl,
-          ),
-        )),
+        body: SingleChildScrollView(
+          child: Card(
+              child: Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 5,
+              horizontal: 8,
+            ),
+            child: Text(
+              ahadithItem.content,
+              style: Theme.of(context).textTheme.bodyMedium,
+              textAlign: TextAlign.center,
+              textDirection: TextDirection.rtl,
+            ),
+          )),
+        ),
       ),
     );
   }

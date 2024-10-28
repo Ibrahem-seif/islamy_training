@@ -120,7 +120,7 @@ class QuranTab extends StatelessWidget {
     "المسد",
     "الإخلاص",
     "الفلق",
-    "الناس"
+    "الناس",
   ];
   final List<int> versesNumber = [
     7,
@@ -243,61 +243,59 @@ class QuranTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            flex: 1,
-            child: QuranWidgets(),
+    return Column(
+      children: [
+        const Expanded(
+          flex: 1,
+          child: QuranWidgets(),
+        ),
+        Container(
+          width: double.infinity,
+          color: ColorsManger.goldColor,
+          height: 3,
+        ),
+        IntrinsicHeight(
+          child: Row(
+            children: [
+              Expanded(
+                  child: Text(
+                'اسم الصوره',
+                style: Theme.of(context).textTheme.titleMedium,
+                textAlign: TextAlign.center,
+                textDirection: TextDirection.rtl,
+              )),
+              VerticalDivider(),
+              Expanded(
+                  child: Text(
+                'عدد الآيات',
+                style: Theme.of(context).textTheme.titleMedium,
+                textAlign: TextAlign.center,
+                textDirection: TextDirection.rtl,
+              )),
+            ],
           ),
-          Container(
-            width: double.infinity,
-            color: ColorsManger.goldColor,
-            height: 3,
-          ),
-          IntrinsicHeight(
-            child: Row(
-              children: [
-                Expanded(
-                    child: Text(
-                  'اسم الصوره',
-                  style: Theme.of(context).textTheme.titleMedium,
-                  textAlign: TextAlign.center,
-                  textDirection: TextDirection.rtl,
-                )),
-                VerticalDivider(),
-                Expanded(
-                    child: Text(
-                  'عدد الآيات',
-                  style: Theme.of(context).textTheme.titleMedium,
-                  textAlign: TextAlign.center,
-                  textDirection: TextDirection.rtl,
-                )),
-              ],
-            ),
-          ),
-          Container(
-            width: double.infinity,
-            color: ColorsManger.goldColor,
-            height: 3,
-          ),
-          Expanded(
-              flex: 3,
-              child: ListView.separated(
-                itemBuilder: (context, index) => QuranItemWdget(
-                    quranItem: QuranItem(
-                        suraName: suraNames[index],
-                        versesNum: versesNumber[index].toString(),
-                        index: index)),
-                itemCount: versesNumber.length,
-                separatorBuilder: (context, index) => Container(
-                  width: double.infinity,
-                  color: ColorsManger.goldColor,
-                  height: 3,
-                ),
-              ))
-        ],
-      ),
+        ),
+        Container(
+          width: double.infinity,
+          color: ColorsManger.goldColor,
+          height: 3,
+        ),
+        Expanded(
+            flex: 3,
+            child: ListView.separated(
+              itemBuilder: (context, index) => QuranItemWdget(
+                  quranItem: QuranItem(
+                      suraName: suraNames[index],
+                      versesNum: versesNumber[index].toString(),
+                      index: index)),
+              itemCount: versesNumber.length,
+              separatorBuilder: (context, index) => Container(
+                width: double.infinity,
+                color: ColorsManger.goldColor,
+                height: 3,
+              ),
+            ))
+      ],
     );
   }
 }
