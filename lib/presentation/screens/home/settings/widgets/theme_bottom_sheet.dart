@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamy_training/core/colors_manger.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ThemeBottomSheet extends StatelessWidget {
   const ThemeBottomSheet({super.key});
@@ -11,11 +12,17 @@ class ThemeBottomSheet extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: Column(
         children: [
-          bulidSelectedTheme(context, 'Light'),
+          bulidSelectedTheme(
+            context,
+            AppLocalizations.of(context)!.light,
+          ),
           const SizedBox(
             height: 10,
           ),
-          bulidUnSelectedTheme(context, 'Dark'),
+          bulidUnSelectedTheme(
+            context,
+            AppLocalizations.of(context)!.dark,
+          ),
         ],
       ),
     );

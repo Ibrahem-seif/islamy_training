@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:islamy_training/core/assets_manger.dart';
-import 'package:islamy_training/core/strings_manger.dart';
 import 'package:islamy_training/presentation/screens/home/hadith/hadith_tab.dart';
 import 'package:islamy_training/presentation/screens/home/quran/quran_tab.dart';
 import 'package:islamy_training/presentation/screens/home/radio/radio_tab.dart';
 import 'package:islamy_training/presentation/screens/home/sebha/sebha_tab.dart';
 import 'package:islamy_training/presentation/screens/home/settings/settings_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.fill,
               image: AssetImage(
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ))),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(StringsManger.appTitle),
+          title: Text(AppLocalizations.of(context)!.appTitle),
         ),
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: selectedIndex,
@@ -44,22 +44,22 @@ class _HomeScreenState extends State<HomeScreen> {
               selectedIndex = index;
               setState(() {});
             },
-            items: const [
+            items: [
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage(AssetsManger.quranIcon)),
-                  label: StringsManger.quranLable),
+                  icon: const ImageIcon(AssetImage(AssetsManger.quranIcon)),
+                  label: AppLocalizations.of(context)!.quran),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage(AssetsManger.hadithIcon)),
-                  label: StringsManger.hadithLable),
+                  icon: const ImageIcon(AssetImage(AssetsManger.hadithIcon)),
+                  label: AppLocalizations.of(context)!.hadith),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage(AssetsManger.sebhaIcon)),
-                  label: StringsManger.sebhaLable),
+                  icon: const ImageIcon(AssetImage(AssetsManger.sebhaIcon)),
+                  label: AppLocalizations.of(context)!.sebha),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage(AssetsManger.radioIcon)),
-                  label: StringsManger.radioLable),
+                  icon: const ImageIcon(AssetImage(AssetsManger.radioIcon)),
+                  label: AppLocalizations.of(context)!.radio),
               BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
-                label: StringsManger.settingsLable,
+                icon: const Icon(Icons.settings),
+                label: AppLocalizations.of(context)!.settings,
               )
             ]),
         body: tabs[selectedIndex],
