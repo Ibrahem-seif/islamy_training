@@ -108,7 +108,7 @@ class _SebhaTabState extends State<SebhaTab> {
       if (counter == 33) {
         counter = 0;
         i++;
-        if (i == 5) {
+        if (i == tasbih.length) {
           i = 0;
         }
       }
