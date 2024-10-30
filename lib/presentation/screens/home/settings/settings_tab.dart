@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islamy_training/core/colors_manger.dart';
 import 'package:islamy_training/presentation/screens/home/settings/widgets/language_bottom_sheet.dart';
 import 'package:islamy_training/presentation/screens/home/settings/widgets/theme_bottom_sheet.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsTab extends StatelessWidget {
   const SettingsTab({super.key});
@@ -17,7 +18,7 @@ class SettingsTab extends StatelessWidget {
             flex: 2,
           ),
           Text(
-            'Theme',
+            AppLocalizations.of(context)!.theme,
             style: Theme.of(context).textTheme.displayMedium,
           ),
           InkWell(
@@ -32,7 +33,7 @@ class SettingsTab extends StatelessWidget {
                   ),
                   borderRadius: BorderRadius.circular(5)),
               child: Text(
-                'Light',
+                AppLocalizations.of(context)!.light,
                 style: Theme.of(context).textTheme.labelMedium,
               ),
             ),
@@ -41,7 +42,7 @@ class SettingsTab extends StatelessWidget {
             flex: 1,
           ),
           Text(
-            'Language',
+            AppLocalizations.of(context)!.language,
             style: Theme.of(context).textTheme.displayMedium,
           ),
           InkWell(

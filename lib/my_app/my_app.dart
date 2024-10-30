@@ -1,10 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:islamy_training/config/theme/my_theme.dart';
 import 'package:islamy_training/core/routes_manger.dart';
-import 'package:islamy_training/presentation/screens/home/hadith/hadith_details/hadith_details.dart';
-import 'package:islamy_training/presentation/screens/home/home.dart';
-import 'package:islamy_training/presentation/screens/home/quran/quran_details/quran_details.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,13 +9,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: const Locale('en'),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: const [
+        Locale('en'),
+        Locale('ar'),
+      ],
       theme: MyTheme.lightTheme,
+      themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
-      routes: {
-        RoutesManger.homeRoute: (_) => HomeScreen(),
-        RoutesManger.quranDetailsRoute: (_) => QuranDetails(),
-        RoutesManger.hadithDetailsRoute: (_) => HadithDetails(),
-      },
+      routes: RoutesManger.routes,
       initialRoute: RoutesManger.homeRoute,
     );
   }

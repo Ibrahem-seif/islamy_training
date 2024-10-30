@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:islamy_training/core/assets_manger.dart';
 import 'package:islamy_training/presentation/screens/home/hadith/hadith_item.dart';
 import 'package:islamy_training/presentation/screens/home/hadith/widgets/hadith_header_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadithTab extends StatefulWidget {
   HadithTab({super.key});
@@ -22,7 +23,7 @@ class _HadithTabState extends State<HadithTab> {
         Expanded(flex: 2, child: Image.asset(AssetsManger.hadithHeader)),
         const Divider(),
         Text(
-          'El-Hadith',
+          AppLocalizations.of(context)!.ahadith,
           style: Theme.of(context).textTheme.titleMedium,
           textAlign: TextAlign.center,
         ),
