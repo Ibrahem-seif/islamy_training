@@ -259,18 +259,16 @@ class QuranTab extends StatelessWidget {
             children: [
               Expanded(
                   child: Text(
-                'اسم الصوره',
+                'Sura Name',
                 style: Theme.of(context).textTheme.titleMedium,
                 textAlign: TextAlign.center,
-                textDirection: TextDirection.rtl,
               )),
-              VerticalDivider(),
+              const VerticalDivider(),
               Expanded(
                   child: Text(
-                'عدد الآيات',
+                'Verses Number',
                 style: Theme.of(context).textTheme.titleMedium,
                 textAlign: TextAlign.center,
-                textDirection: TextDirection.rtl,
               )),
             ],
           ),

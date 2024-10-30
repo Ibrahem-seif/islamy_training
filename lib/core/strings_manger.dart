@@ -1,9 +1,9 @@
 class StringsManger {
-  static const String appTitle = 'اسلامى';
-  static const String quranLable = 'القران';
-  static const String hadithLable = 'الحديث';
-  static const String sebhaLable = 'السبحه';
-  static const String radioLable = 'الراديو';
-  static const String settingsLable = 'الاعدادات';
-  static const String suraName = 'سورة';
+  static const String appTitle = 'Islamy';
+  static const String quranLable = 'Quran';
+  static const String hadithLable = 'Hadith';
+  static const String sebhaLable = 'Sebha';
+  static const String radioLable = 'Radio';
+  static const String settingsLable = 'Settings';
+  static const String suraName = 'Sura Name';
 }

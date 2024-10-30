@@ -22,10 +22,9 @@ class _HadithTabState extends State<HadithTab> {
         Expanded(flex: 2, child: Image.asset(AssetsManger.hadithHeader)),
         const Divider(),
         Text(
-          'الاحاديث',
+          'El-Hadith',
           style: Theme.of(context).textTheme.titleMedium,
           textAlign: TextAlign.center,
-          textDirection: TextDirection.rtl,
         ),
         const Divider(),
         Expanded(
