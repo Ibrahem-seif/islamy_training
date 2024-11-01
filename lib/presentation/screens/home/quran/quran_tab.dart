@@ -251,7 +251,7 @@ class QuranTab extends StatelessWidget {
         ),
         Container(
           width: double.infinity,
-          color: ColorsManger.goldColor,
+          color: Theme.of(context).dividerColor,
           height: 3,
         ),
         IntrinsicHeight(
@@ -275,7 +275,7 @@ class QuranTab extends StatelessWidget {
         ),
         Container(
           width: double.infinity,
-          color: ColorsManger.goldColor,
+          color: Theme.of(context).dividerColor,
           height: 3,
         ),
         Expanded(
@@ -289,7 +289,7 @@ class QuranTab extends StatelessWidget {
               itemCount: versesNumber.length,
               separatorBuilder: (context, index) => Container(
                 width: double.infinity,
-                color: ColorsManger.goldColor,
+                color: Theme.of(context).dividerColor,
                 height: 3,
               ),
             ))

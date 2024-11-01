@@ -28,13 +28,13 @@ class SettingsTab extends StatelessWidget {
               padding: const EdgeInsets.all(4),
               decoration: BoxDecoration(
                   border: Border.all(
-                    color: ColorsManger.goldColor,
+                    color: Theme.of(context).dividerColor,
                     width: 2,
                   ),
                   borderRadius: BorderRadius.circular(5)),
               child: Text(
                 AppLocalizations.of(context)!.light,
-                style: Theme.of(context).textTheme.labelMedium,
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
             ),
           ),
@@ -52,13 +52,13 @@ class SettingsTab extends StatelessWidget {
               padding: const EdgeInsets.all(4),
               decoration: BoxDecoration(
                   border: Border.all(
-                    color: ColorsManger.goldColor,
+                    color: Theme.of(context).dividerColor,
                     width: 2,
                   ),
                   borderRadius: BorderRadius.circular(5)),
               child: Text(
                 'English',
-                style: Theme.of(context).textTheme.labelMedium,
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
             ),
           ),

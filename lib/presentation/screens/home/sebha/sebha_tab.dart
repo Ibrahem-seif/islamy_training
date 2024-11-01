@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamy_training/config/theme/my_theme.dart';
 import 'package:islamy_training/core/assets_manger.dart';
 import 'package:islamy_training/core/colors_manger.dart';
 
@@ -31,16 +32,22 @@ class _SebhaTabState extends State<SebhaTab> {
           Padding(
             padding: EdgeInsets.fromLTRB(size.height * 0.084, 0, 0, 0),
             child: Image.asset(
-              AssetsManger.sebhaHeader,
+              MyTheme.isLight
+                  ? AssetsManger.sebhaHeader
+                  : AssetsManger.sebhaHeaderDark,
               height: size.height * 0.13,
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(0, size.height * 0.05, 0, 0),
+            padding: MyTheme.isLight
+                ? EdgeInsets.fromLTRB(0, size.height * 0.05, 0, 0)
+                : EdgeInsets.fromLTRB(0, size.height * 0.1, 0, 0),
             child: Transform.rotate(
               angle: angle,
               child: Image.asset(
-                AssetsManger.sebhaBody,
+                MyTheme.isLight
+                    ? AssetsManger.sebhaBody
+                    : AssetsManger.sebhaBodyDark,
                 height: size.height * 0.33,
               ),
             ),
@@ -67,13 +74,13 @@ class _SebhaTabState extends State<SebhaTab> {
         Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: ColorsManger.goldColor.withOpacity(0.8),
+              color: Theme.of(context).indicatorColor.withOpacity(0.8),
             ),
             margin: EdgeInsets.symmetric(horizontal: size.width * 0.4),
-            padding: EdgeInsets.all(15),
+            padding: const EdgeInsets.all(15),
             child: Text(
               counter.toString(),
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 20,
               ),
@@ -85,8 +92,8 @@ class _SebhaTabState extends State<SebhaTab> {
           margin: EdgeInsets.symmetric(horizontal: size.width * 0.2),
           child: ElevatedButton(
             style: ButtonStyle(
-                backgroundColor:
-                    WidgetStateProperty.all<Color>(ColorsManger.goldColor)),
+                backgroundColor: WidgetStateProperty.all<Color>(
+                    Theme.of(context).dividerColor)),
             onPressed: onClicked,
             child: Text(
               tasbih[i],

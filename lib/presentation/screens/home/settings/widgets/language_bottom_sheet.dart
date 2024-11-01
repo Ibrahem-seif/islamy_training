@@ -7,7 +7,6 @@ class LanguageBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: ColorsManger.goldColor,
       padding: const EdgeInsets.all(10),
       child: Column(
         children: [
