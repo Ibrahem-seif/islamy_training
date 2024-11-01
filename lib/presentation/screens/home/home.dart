@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:islamy_training/config/theme/my_theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamy_training/core/assets_manger.dart';
 import 'package:islamy_training/presentation/screens/home/hadith/hadith_tab.dart';
 import 'package:islamy_training/presentation/screens/home/quran/quran_tab.dart';
 import 'package:islamy_training/presentation/screens/home/radio/radio_tab.dart';
 import 'package:islamy_training/presentation/screens/home/sebha/sebha_tab.dart';
 import 'package:islamy_training/presentation/screens/home/settings/settings_tab.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islamy_training/provider/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -19,21 +20,22 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> tabs = [
     QuranTab(),
     HadithTab(),
-    SebhaTab(),
-    RadioTab(),
-    SettingsTab(),
+    const SebhaTab(),
+    const RadioTab(),
+    const SettingsTab(),
   ];
 
   int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+    SettingsProvider myProvider = Provider.of(context);
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.fill,
               image: AssetImage(
-                MyTheme.isLight
+                myProvider.currentTheme == ThemeMode.light
                     ? AssetsManger.lightMainBg
                     : AssetsManger.darkMainBg,
               ))),
