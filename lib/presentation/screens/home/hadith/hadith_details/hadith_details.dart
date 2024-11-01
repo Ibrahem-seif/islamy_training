@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamy_training/config/theme/my_theme.dart';
 import 'package:islamy_training/core/assets_manger.dart';
 import 'package:islamy_training/presentation/screens/home/hadith/hadith_item.dart';
 
@@ -10,9 +11,11 @@ class HadithDetails extends StatelessWidget {
     HadithItem ahadithItem =
         ModalRoute.of(context)?.settings.arguments as HadithItem;
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           image: DecorationImage(
-        image: AssetImage(AssetsManger.lightMainBg),
+        image: AssetImage(
+          MyTheme.isLight ? AssetsManger.lightMainBg : AssetsManger.darkMainBg,
+        ),
         fit: BoxFit.fill,
       )),
       child: Scaffold(

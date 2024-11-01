@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islamy_training/config/theme/my_theme.dart';
 import 'package:islamy_training/core/assets_manger.dart';
 import 'package:islamy_training/presentation/screens/home/quran/quran_details/widgets/verses_widgets.dart';
 import 'package:islamy_training/presentation/screens/home/quran/quran_item.dart';
@@ -24,7 +25,9 @@ class _QuranDetailsState extends State<QuranDetails> {
           image: DecorationImage(
               fit: BoxFit.fill,
               image: AssetImage(
-                AssetsManger.lightMainBg,
+                MyTheme.isLight
+                    ? AssetsManger.lightMainBg
+                    : AssetsManger.darkMainBg,
               ))),
       child: Scaffold(
           appBar: AppBar(
