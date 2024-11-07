@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:islamy_training/config/theme/my_theme.dart';
 import 'package:islamy_training/core/assets_manger.dart';
 import 'package:islamy_training/core/colors_manger.dart';
+import 'package:islamy_training/provider/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class SebhaTab extends StatefulWidget {
   const SebhaTab({super.key});
@@ -24,6 +26,7 @@ class _SebhaTabState extends State<SebhaTab> {
 
   @override
   Widget build(BuildContext context) {
+    SettingsProvider myProvider = Provider.of(context);
     Size size = MediaQuery.of(context).size;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -32,20 +35,20 @@ class _SebhaTabState extends State<SebhaTab> {
           Padding(
             padding: EdgeInsets.fromLTRB(size.height * 0.084, 0, 0, 0),
             child: Image.asset(
-              MyTheme.isLight
+              myProvider.currentTheme == ThemeMode.light
                   ? AssetsManger.sebhaHeader
                   : AssetsManger.sebhaHeaderDark,
               height: size.height * 0.13,
             ),
           ),
           Padding(
-            padding: MyTheme.isLight
+            padding: myProvider.currentTheme == ThemeMode.light
                 ? EdgeInsets.fromLTRB(0, size.height * 0.05, 0, 0)
                 : EdgeInsets.fromLTRB(0, size.height * 0.1, 0, 0),
             child: Transform.rotate(
               angle: angle,
               child: Image.asset(
-                MyTheme.isLight
+                myProvider.currentTheme == ThemeMode.light
                     ? AssetsManger.sebhaBody
                     : AssetsManger.sebhaBodyDark,
                 height: size.height * 0.33,
