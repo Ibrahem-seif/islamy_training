@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SettingsProvider extends ChangeNotifier {
   ThemeMode currentTheme = ThemeMode.light;
-  Locale currentLocale = Locale('en');
+  Locale currentLocale = const Locale('en');
 
   void changeTheme(ThemeMode newTheme) {
     if (currentTheme == newTheme) return;

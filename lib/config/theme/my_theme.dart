@@ -73,7 +73,7 @@ class MyTheme {
     ),
     iconButtonTheme: const IconButtonThemeData(
         style: ButtonStyle(
-            iconColor: WidgetStatePropertyAll(ColorsManger.whiteColor))),
+            iconColor: WidgetStatePropertyAll(ColorsManger.blackColor))),
   );
   static ThemeData dark = ThemeData(
     appBarTheme: const AppBarTheme(

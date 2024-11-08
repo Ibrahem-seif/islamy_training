@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:islamy_training/config/theme/my_theme.dart';
 import 'package:islamy_training/core/assets_manger.dart';
 import 'package:islamy_training/core/colors_manger.dart';
 import 'package:islamy_training/provider/settings_provider.dart';
