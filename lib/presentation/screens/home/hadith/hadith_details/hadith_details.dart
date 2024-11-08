@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:islamy_training/config/theme/my_theme.dart';
 import 'package:islamy_training/core/assets_manger.dart';
 import 'package:islamy_training/presentation/screens/home/hadith/hadith_item.dart';
+import 'package:islamy_training/provider/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class HadithDetails extends StatelessWidget {
   const HadithDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SettingsProvider myProvider = Provider.of(context);
     HadithItem ahadithItem =
         ModalRoute.of(context)?.settings.arguments as HadithItem;
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
         image: AssetImage(
-          MyTheme.isLight ? AssetsManger.lightMainBg : AssetsManger.darkMainBg,
+          myProvider.currentTheme == ThemeMode.light
+              ? AssetsManger.lightMainBg
+              : AssetsManger.darkMainBg,
         ),
         fit: BoxFit.fill,
       )),

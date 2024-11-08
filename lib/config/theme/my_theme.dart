@@ -68,6 +68,12 @@ class MyTheme {
         topRight: Radius.circular(20),
       )),
     ),
+    iconTheme: const IconThemeData(
+      color: ColorsManger.whiteColor,
+    ),
+    iconButtonTheme: const IconButtonThemeData(
+        style: ButtonStyle(
+            iconColor: WidgetStatePropertyAll(ColorsManger.blackColor))),
   );
   static ThemeData dark = ThemeData(
     appBarTheme: const AppBarTheme(
@@ -132,5 +138,11 @@ class MyTheme {
         topRight: Radius.circular(20),
       )),
     ),
+    iconTheme: const IconThemeData(
+      color: ColorsManger.subMainDark,
+    ),
+    iconButtonTheme: const IconButtonThemeData(
+        style: ButtonStyle(
+            iconColor: WidgetStatePropertyAll(ColorsManger.subMainDark))),
   );
 }

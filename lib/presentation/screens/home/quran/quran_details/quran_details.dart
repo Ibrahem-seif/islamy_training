@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islamy_training/config/theme/my_theme.dart';
 import 'package:islamy_training/core/assets_manger.dart';
 import 'package:islamy_training/presentation/screens/home/quran/quran_details/widgets/verses_widgets.dart';
 import 'package:islamy_training/presentation/screens/home/quran/quran_item.dart';
+import 'package:islamy_training/provider/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class QuranDetails extends StatefulWidget {
   QuranDetails({super.key});
@@ -17,6 +18,7 @@ class _QuranDetailsState extends State<QuranDetails> {
 
   @override
   Widget build(BuildContext context) {
+    SettingsProvider myProvider = Provider.of(context);
     QuranItem suraItem =
         ModalRoute.of(context)?.settings.arguments as QuranItem;
     if (verses.isEmpty) readSura(suraItem.index);
@@ -25,7 +27,7 @@ class _QuranDetailsState extends State<QuranDetails> {
           image: DecorationImage(
               fit: BoxFit.fill,
               image: AssetImage(
-                MyTheme.isLight
+                myProvider.currentTheme == ThemeMode.light
                     ? AssetsManger.lightMainBg
                     : AssetsManger.darkMainBg,
               ))),
