@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamy_training/core/assets_manger.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RadioTab extends StatelessWidget {
   const RadioTab({super.key});
@@ -16,7 +17,7 @@ class RadioTab extends StatelessWidget {
         height: size.height * 0.05,
       ),
       Text(
-        'إذاعة القرآن الكريم',
+        AppLocalizations.of(context)!.channel,
         style: Theme.of(context).textTheme.titleMedium,
         textDirection: TextDirection.rtl,
       ),
