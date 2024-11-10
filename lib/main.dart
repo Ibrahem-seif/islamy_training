@@ -6,7 +6,9 @@ import 'my_app/my_app.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-    create: (context) => SettingsProvider(),
+    create: (context) => SettingsProvider()
+      ..getTheme()
+      ..getLocale(),
     child: const MyApp(),
   ));
 }
